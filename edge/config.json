@@ -1,0 +1,91 @@
+{
+  "_comment": "fluID Edge Gateway — Plant Config Template. Fill in your plant's actual values.",
+
+  "plant_name": "Genome Valley Unit 7",
+  "plant_id": "REPLACE-WITH-UUID-FROM-FLUID-CLOUD",
+
+  "api_url": "https://your-fluid-instance.com",
+  "api_key": "REPLACE-WITH-EDGE-API-KEY-FROM-FLUID-DASHBOARD",
+
+  "poll_interval_seconds": 30,
+  "forward_interval_seconds": 60,
+  "buffer_db": "/var/fluid/buffer.db",
+
+  "sensors": [
+    {
+      "_comment": "Conductivity sensor — e.g. Mettler Toledo Thornton 200CR or HACH CDC10101",
+      "sensor_key": "conductivity",
+      "label": "Conductivity",
+      "unit": "µS/cm",
+      "host": "192.168.10.101",
+      "port": 502,
+      "unit_id": 1,
+      "register_address": 100,
+      "register_count": 2,
+      "scale_factor": 0.01,
+      "min_range": 0.1,
+      "max_range": 1.3,
+      "decimals": 2
+    },
+    {
+      "_comment": "TOC analyzer — e.g. GE Sievers M5310C or Endress+Hauser CA80TOC",
+      "sensor_key": "toc",
+      "label": "TOC",
+      "unit": "ppb",
+      "host": "192.168.10.102",
+      "port": 502,
+      "unit_id": 1,
+      "register_address": 100,
+      "register_count": 2,
+      "scale_factor": 1.0,
+      "min_range": 10,
+      "max_range": 490,
+      "decimals": 0
+    },
+    {
+      "_comment": "pH sensor — e.g. Endress+Hauser Liquiline CM444 or Mettler Toledo M400",
+      "sensor_key": "ph",
+      "label": "pH",
+      "unit": "pH",
+      "host": "192.168.10.103",
+      "port": 502,
+      "unit_id": 1,
+      "register_address": 100,
+      "register_count": 2,
+      "scale_factor": 0.01,
+      "min_range": 4.5,
+      "max_range": 8.5,
+      "decimals": 2
+    },
+    {
+      "_comment": "Temperature — usually built into conductivity or flow sensor",
+      "sensor_key": "temperature",
+      "label": "Temperature",
+      "unit": "°C",
+      "host": "192.168.10.101",
+      "port": 502,
+      "unit_id": 1,
+      "register_address": 104,
+      "register_count": 2,
+      "scale_factor": 0.1,
+      "min_range": 18.0,
+      "max_range": 32.0,
+      "decimals": 1
+    },
+    {
+      "_comment": "Flow rate — e.g. Endress+Hauser Promag or Yokogawa ADMAG",
+      "sensor_key": "flow",
+      "label": "Flow Rate",
+      "unit": "L/hr",
+      "host": "192.168.10.104",
+      "port": 502,
+      "unit_id": 1,
+      "register_address": 100,
+      "register_count": 2,
+      "scale_factor": 1.0,
+      "min_range": 80,
+      "max_range": 200,
+      "decimals": 0
+    }
+  ]
+}
